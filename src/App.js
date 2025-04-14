@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import Button from "./Button";
 import Text from "../Text";
 
@@ -13,6 +13,10 @@ const App=()=>{
     const handleClick=()=>{
         setData((prevdata)=>[...prevdata,{id:'f',text:'text 5'}])
     }
+
+    useEffect(()=>{
+        console.log('Added new item');
+    },[data])
 
     return <>
     {data.map((item,index)=>{
