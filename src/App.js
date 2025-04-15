@@ -16,6 +16,10 @@ const App=()=>{
 
     useEffect(()=>{
         console.log('Added new item');
+
+        return ()=>{
+            console.log('unmount')
+        }
     },[data])
 
     return <>
