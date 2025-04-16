@@ -1,4 +1,4 @@
-import React,{useEffect, useLayoutEffect, useState} from "react";
+import React,{useEffect, useLayoutEffect, useState, useCallback} from "react";
 import Button from "./Button";
 import Text from "../Text";
 
@@ -13,6 +13,12 @@ const App=()=>{
     const handleClick=()=>{
         setData((prevdata)=>[...prevdata,{id:'f',text:'text 5'}])
     }
+
+    const callbackRunning=useCallback(()=>{
+        console.log('callback running');
+    },[])
+
+    callbackRunning();
 
     useEffect(()=>{
         console.log('useEffect');
