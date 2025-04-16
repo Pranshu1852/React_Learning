@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React,{useEffect, useLayoutEffect, useState} from "react";
 import Button from "./Button";
 import Text from "../Text";
 
@@ -15,12 +15,16 @@ const App=()=>{
     }
 
     useEffect(()=>{
-        console.log('Added new item');
+        console.log('useEffect');
 
         return ()=>{
             console.log('unmount')
         }
     },[data])
+
+    useLayoutEffect(()=>{
+        console.log('uselayouteffect');
+    },[])
 
     return <>
     {data.map((item,index)=>{
